@@ -8,7 +8,7 @@ export default function Profile({ profile }) {
     <>
       <p>Hello, {profile.nickname}!</p>
 
-      <label for="newname">Change nickname</label>
+      <label htmlFor="newname">Change nickname</label>
       <input
         id="newname"
         value={newName}

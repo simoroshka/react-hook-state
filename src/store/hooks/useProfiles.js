@@ -19,6 +19,7 @@ export const useCurrentProfile = () => {
   }
 
   function changeNickname(value) {
+    console.log("vaölue", value);
     dispatch(actions.profile.changeNickname(value));
   }
 

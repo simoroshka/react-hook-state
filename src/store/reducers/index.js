@@ -1,16 +1,16 @@
 import {
-  register as profileRegister,
-  reducer as profileReducer
-} from "./profileReducer";
+  register as profilesRegister,
+  reducer as profilesReducer
+} from "./profilesReducer";
 
 export const initialState = {};
 export const actions = {};
 
 // attach itself to the store
-profileRegister(initialState, actions);
+profilesRegister(initialState, actions);
 
 export const reducer = (state, action) => {
   return {
-    profile: profileReducer(state.profile, action)
+    profiles: profilesReducer(state.profiles, action)
   };
 };

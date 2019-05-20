@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import useEnhancedProfile from "../store/Profiles/useEnhancedProfile";
 
 export default function Profile({ profile }) {
   const [newName, setNewName] = useState("");
+  const p = useEnhancedProfile(profile);
 
-  if (profile.loading) return "loading....";
   return (
     <>
-      <p>Hello, {profile.nickname}!</p>
+      <p>Hello, {p.nickname}!</p>
 
       <label htmlFor="newname">Change nickname</label>
       <input
@@ -14,10 +15,11 @@ export default function Profile({ profile }) {
         value={newName}
         onChange={e => setNewName(e.target.value)}
       />
-      <button onClick={() => profile.changeNickname(newName)}>change</button>
+      <button onClick={() => p.changeNickname(newName)} disabled={p.isUpdating}>
+        change
+      </button>
       <br />
       <br />
-      <button onClick={profile.fetch}>change profile</button>
     </>
   );
 }

@@ -1,9 +1,10 @@
 {
-  "name": "react-hooks-predictable-state-without-redux",
+  "name": "react-hooks-global-state",
   "description": "React predictable state example using Hooks and Context API without Redux.",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "0.18.0",
     "prop-types": "^15.6.2",
     "react": "16.7.0-alpha.2",
     "react-dom": "16.7.0-alpha.2",
@@ -18,10 +19,6 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
+  "keywords": []
 }

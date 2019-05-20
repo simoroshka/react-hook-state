@@ -4,23 +4,25 @@ export const initialState = {
 };
 
 export const actions = {
-  fetch: () => ({ type: "FETCH_PROFILE" }),
+  fetch: () => ({ type: "FETCH_PROFILES" }),
   fetched: payload => ({ type: "FETCH_PROFILE_SUCCESS", payload }),
-  changeNickname: (profileID, value) => ({
-    type: "CHANGE_NICKNAME",
-    payload: { profileID, value }
-  })
+  changeNickname: (profileID, value) => {
+    console.log("CHANGE_NICKNAME", profileID, value);
+
+    return {
+      type: "CHANGE_NICKNAME",
+      payload: { profileID, value }
+    };
+  }
 };
 
 export const reducer = (state, action) => {
-  console.log("profile reducer state", state);
   switch (action.type) {
     case "FETCH_PROFILES":
       return { ...state, loading: true };
     case "FETCH_PROFILES_SUCCESS":
       return { profiles: action.payload, loading: false };
     case "CHANGE_NICKNAME":
-      console.log(action);
       const profiles = [...state];
       profiles[action.payload.profileID].nickname = action.payload.value;
       return profiles;
